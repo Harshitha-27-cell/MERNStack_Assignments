@@ -7,12 +7,12 @@ import {adminRoute} from './APIs/AdminAPI.js'
 import {commonRouter} from './APIs/CommonAPI.js'
 import cookieParser from 'cookie-parser'
 
-config()    //process .env
+config()   
 
-//Create express applica.n
+//Create express 
 const app=exp()
 
-//add bosy parser middleware  (to extract the token form req)
+//add bosy parser middleware 
 app.use(exp.json())
 //Add cookie parser middleware
 app.use(cookieParser())

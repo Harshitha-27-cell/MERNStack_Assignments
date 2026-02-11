@@ -7,22 +7,22 @@ import {verifyToken} from '../Middlewares/VerifyToken.js';
 
 export const authorRoute=exp.Router()
 
-//Register Author(publlic)
-authorRoute.post('/users',async(req,res)=>{   //no need to catch the err since iddleware is there to catch the err
+//Register Author(public)
+authorRoute.post('/users',async(req,res)=>{   
     //get userObj from req
     let userObj=req.body
     //call register
-    const newUserObj=await register({...userObj,role:"AUTHOR"})     //Role shld be assigned by the server than user selecting it
+    const newUserObj=await register({...userObj,role:"AUTHOR"})     
     //send res
     res.status(201).json({message:"Author created",payload:newUserObj})
 })
 
-//Create article   (protected route)         //It shld be protected route 
+//Create article   (protected route)        
 authorRoute.post("/articles",verifyToken,checkAuthor,async(req,res)=>{
     //get article from req
     let article=req.body
 
-    //check for the author      actually not required from frontend but if v used postman app.n then v need to check the author id existing or not
+    //check for the author    
     let author=await UserTypeModel.findById(article.author)
     if(!author||author.role!=="AUTHOR"){       //check how not eqs
         return res.status(401).json({message:"Invalid AUthor"})
@@ -33,7 +33,7 @@ authorRoute.post("/articles",verifyToken,checkAuthor,async(req,res)=>{
     //save 
     let createArticleDoc=await newArticleDoc.save()
     //send res
-    res.status(201).json({message:"Article created",payload:createArticleDoc})  //to make the article appear
+    res.status(201).json({message:"Article created",payload:createArticleDoc})  
 })
 
 //Read articles of author (protected route) 
@@ -46,9 +46,9 @@ authorRoute.get("/articles/:authorid",verifyToken,checkAuthor,async(req,res)=>{
         return res.status(401).json({message:"Invalid AUthor"})
     } 
 
-    //Read articles by this author which r active
+    //Read articles by this author 
     let articles=await ArticleModel.find({author:aid,isArticleActive:true})
-        .populate("author","firstName email")         //to get the author details
+        .populate("author","firstName email")        
 
     //send res
     res.status(200).json({
@@ -80,9 +80,9 @@ authorRoute.put("/articles",verifyToken,checkAuthor,async(req,res)=>{
     res.status(200).json({message:"Article updated",payload:updatedArticle})
 })
 
-//delete(soft delete) article    (protected route)         hard del is by findByIdandDelete, instead v upadte active status of article to false
+//delete(soft delete) article 
 authorRoute.put("/articles/delete",verifyToken,checkAuthor,async(req,res)=>{
-    //get article to be del frm req
+    //get article to be deleted from req
     let {author,articleId}=req.body
 
     //find article

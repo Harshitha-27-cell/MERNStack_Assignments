@@ -5,8 +5,7 @@ import {checkAdmin} from '../Middlewares/CheckAdmin.js'
 
 export const adminRoute=exp.Router()
 
-//Authenticate admin  -> using CommonAPI login
-//Read all articles (optional)
+
 //Block user roles
 adminRoute.get("/block/:userId",verifyToken,checkAdmin,async(req,res)=>{
     //check user-id exits or not

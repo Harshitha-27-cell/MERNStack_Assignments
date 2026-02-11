@@ -9,10 +9,10 @@ export const checkAuthor=async(req,res,next)=>{
 
     //If author not found
     if(!author){       
-        return res.status(401).json({message:"Invalid Author"})         //401->  authenticated but not authorised
+        return res.status(401).json({message:"Invalid Author"})       
     }
 
-    //if author found but role is diff.t
+    //if author found but role is different
     if(author.role!=='AUTHOR')
     {
         return res.status(403).json({message:"User is not an Author"})  

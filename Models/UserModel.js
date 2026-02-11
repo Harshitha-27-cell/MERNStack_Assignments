@@ -23,7 +23,7 @@ const userSchema=new Schema({
     },
     role:{
         type:String,
-        enum:["AUTHOR","USER","ADMIN"],  //mostly capitals for enum 
+        enum:["AUTHOR","USER","ADMIN"],  
         required:[true,"{Value} is an nvalid role"]
     },
     isActive:{
@@ -35,7 +35,7 @@ const userSchema=new Schema({
         timestamps:true  ,
         versionKey:false
     
-})  //since many like google follow this format v can use login with google so v used this format
+}) 
 
 //create model
 export const UserTypeModel=model(

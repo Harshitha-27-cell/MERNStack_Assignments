@@ -6,12 +6,12 @@ import {ArticleModel} from '../Models/ArticleModel.js'
 export const userRoute=exp.Router()
 
 //Register user
-userRoute.post('/users',async(req,res)=>{   //no need to catch the err since iddleware is there to catch the err
-    //get userObj from req
+userRoute.post('/users',async(req,res)=>{  
+     //get userObj from req
     let userObj=req.body
     //call register
-    const newUserObj=await register({...userObj,role:"USER"})     //Role shld be assigned by the server than user selecting it
-    //send res
+    const newUserObj=await register({...userObj,role:"USER"})     
+     //send res
     res.status(201).json({message:"User created",payload:newUserObj})
 })
 
