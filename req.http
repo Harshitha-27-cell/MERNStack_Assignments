@@ -1,0 +1,112 @@
+### Author Register
+POST http://localhost:4000/author-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Shaniga",
+    "lastName":"Palli",
+    "email":"palli1@gmail.com",
+    "password":"palli@123",
+    "profileImageUrl":"https://example.com/profile.jpg1"
+}
+
+### User Register
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Banesh",
+    "lastName":"Kumar",
+    "email":"banesh1@edu.in",
+    "password":"Bnu@123",
+    "profileImageUrl":"https://example.com/user.jpg"
+}
+
+### Common Login (Author/User/Admin)
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email":"palli1@gmail.com",
+    "password":"palli@123"
+}
+
+### Common Logout
+POST http://localhost:4000/common-api/logout
+
+### Change Password
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "email":"palli1@gmail.com",
+    "currentPassword":"palli@123",
+    "newPassword":"newpswd@123"
+}
+
+
+### Create Article (Author)
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"698ac1039c958056138a5051",
+    "title":"Test1 Article",
+    "category":"Programming"
+}
+
+### Read Articles of Author
+GET http://localhost:4000/author-api/articles/698ac1039c958056138a5051
+
+### Update Article (Author)
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"698ac1039c958056138a5051",
+    "articleId":"698ac1589c958056138a505a",
+    "title":"Testing Article",
+    "category":"Algorithms"
+}
+
+### Delete Article (Author)
+PUT http://localhost:4000/author-api/articles/delete
+Content-Type: application/json
+
+{
+    "author":"698ac1039c958056138a5051",
+    "articleId":"698ac1589c958056138a505a"
+}
+
+### Read All Articles (User)
+POST http://localhost:4000/user-api/articles
+Content-Type: application/json
+
+{
+    "user":"6989917698a3722fc06a8fa6"
+}
+
+### Add Comment (User)
+POST http://localhost:4000/user-api/articles/comment
+Content-Type: application/json
+
+{
+    "user":"6989917698a3722fc06a8fa6",
+    "articleId":"698ab880c479180754342bb7",
+    "comment":"This is a very helpful article!"
+}
+
+### Block User (Admin)
+GET http://localhost:4000/admin-api/block/6989917698a3722fc06a8fa6
+
+### Unblock User (Admin)
+GET http://localhost:4000/admin-api/unblock/6989917698a3722fc06a8fa6
+
+### Admin Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"adminuuu"
+}
