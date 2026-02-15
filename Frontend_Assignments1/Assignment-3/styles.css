@@ -1,0 +1,48 @@
+body{
+background-color:#d9d0c4;
+font-family: Georgia, "Times New Roman", serif;
+}
+
+.container{
+width:700px;
+margin:auto;               
+text-align:center;          
+padding-top:30px;
+}
+
+/*logo style*/
+.logo{
+width:150px;
+margin-bottom:10px;
+}
+
+h1{
+letter-spacing:2px;
+margin:5px 0 10px;
+}
+
+hr{
+border:1px solid #9bb6c4;
+margin-bottom:25px;
+}
+
+h3{
+color:#c96d33;
+text-align:left;            
+margin-top:20px;
+}
+
+p{
+text-align:left;            
+font-size:15px;
+line-height:1.5;
+}
+
+.info{
+font-family: Arial, Helvetica, sans-serif;
+font-style: italic;
+}
+
+.em{
+font-style:italic;
+}
