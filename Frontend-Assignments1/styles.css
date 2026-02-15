@@ -1,0 +1,65 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    margin: 40px;
+}
+
+.container{
+    width: 900px;
+    margin: auto;
+}
+
+/*Blue card style*/
+.card{
+    background-color: #4a74b8;
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.card h2{
+    margin-bottom: 15px;
+}
+
+.city-list{
+    text-align: left;
+    display: inline-block;
+}
+
+.city-list a{
+    color: white;
+    text-decoration: none;
+}
+
+.city-list a:hover{
+    text-decoration: underline;
+}
+
+/* Images row*/
+.images{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.images img{
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid white;
+}
+
+.back{
+    display: inline-block;
+    margin-top: 15px;
+    color: yellow;
+    text-decoration: none;
+}
+
+.back:hover{
+    text-decoration: underline;
+}
