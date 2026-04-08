@@ -17,7 +17,6 @@ export default function App() {
       path: "/",
       element: <RootLayout />, // common layout
       children: [
-
         // Home page
         {
           index: true,
