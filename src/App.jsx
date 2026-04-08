@@ -23,7 +23,6 @@ export default function App() {
           index: true,
           element: <Home />
         },
-
         // Products list page
         {
           path: "products",
